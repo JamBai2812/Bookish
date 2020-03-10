@@ -11,11 +11,14 @@
         <e p="HomeController.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
-        <e p="Book.cs" t="Include" />
-        <e p="Catalogue.cs" t="Include" />
-        <e p="DatabaseModels" t="Include" />
+        <e p="DatabaseModels" t="Include">
+          <e p="Book.cs" t="Include" />
+          <e p="Catalogue.cs" t="Include" />
+        </e>
         <e p="ErrorViewModel.cs" t="Include" />
-        <e p="Models" t="Include" />
+        <e p="Models" t="Include">
+          <e p="BookModel.cs" t="Include" />
+        </e>
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
