@@ -68,3 +68,7 @@ C:\Training2\Bookish\Bookish\obj\Debug\netcoreapp3.1\Bookish.Views.pdb
 C:\Training2\Bookish\Bookish\obj\Debug\netcoreapp3.1\Bookish.dll
 C:\Training2\Bookish\Bookish\obj\Debug\netcoreapp3.1\Bookish.pdb
 C:\Training2\Bookish\Bookish\obj\Debug\netcoreapp3.1\Bookish.csproj.CopyComplete
+C:\Training2\Bookish\Bookish\obj\Debug\netcoreapp3.1\Razor\Views\Home\Search.cshtml.g.cs
+C:\Training2\Bookish\Bookish\obj\Debug\netcoreapp3.1\Razor\Views\Search\Index.cshtml.g.cs
+C:\Training2\Bookish\Bookish\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Training2\Bookish\Bookish\obj\Debug\netcoreapp3.1\Razor\Views\Home\Search1.cshtml.g.cs

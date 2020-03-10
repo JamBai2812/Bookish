@@ -9,8 +9,6 @@ using Bookish.Models;
 
 namespace Bookish.Controllers
 {
-    
-    [Route("Home")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -30,6 +28,11 @@ namespace Bookish.Controllers
         public IActionResult Privacy()
         {
             return View("Privacy");
+        }
+
+        public IActionResult Search()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
