@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Training2\\Bookish\\Bookish.csproj",
+    "projectUniqueName": "C:\\Training2\\Bookish\\Bookish\\Bookish.csproj",
     "projectName": "Bookish",
-    "projectPath": "C:\\Training2\\Bookish\\Bookish.csproj",
-    "outputPath": "C:\\Training2\\Bookish\\obj\\",
+    "projectPath": "C:\\Training2\\Bookish\\Bookish\\Bookish.csproj",
+    "outputPath": "C:\\Training2\\Bookish\\Bookish\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
@@ -25,6 +25,12 @@
   },
   "frameworks": {
     "netcoreapp3.1": {
+      "dependencies": {
+        "Dapper": {
+          "target": "Package",
+          "version": "[2.0.30, )"
+        }
+      },
       "imports": [
         "net461",
         "net462",

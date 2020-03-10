@@ -9,6 +9,8 @@ using Bookish.Models;
 
 namespace Bookish.Controllers
 {
+    
+    [Route("Home")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,14 +20,16 @@ namespace Bookish.Controllers
             _logger = logger;
         }
 
+        // [HttpGet("my-route")]
         public IActionResult Index()
         {
-            return View();
+            return View("Index");
         }
 
+        // [HttpGet("my-privacy")]
         public IActionResult Privacy()
         {
-            return View();
+            return View("Privacy");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

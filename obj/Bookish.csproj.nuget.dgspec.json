@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Training2\\Bookish\\Bookish.csproj": {}
+    "C:\\Training2\\Bookish\\Bookish\\Bookish.csproj": {}
   },
   "projects": {
-    "C:\\Training2\\Bookish\\Bookish.csproj": {
+    "C:\\Training2\\Bookish\\Bookish\\Bookish.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Training2\\Bookish\\Bookish.csproj",
+        "projectUniqueName": "C:\\Training2\\Bookish\\Bookish\\Bookish.csproj",
         "projectName": "Bookish",
-        "projectPath": "C:\\Training2\\Bookish\\Bookish.csproj",
+        "projectPath": "C:\\Training2\\Bookish\\Bookish\\Bookish.csproj",
         "packagesPath": "C:\\Users\\JamBai\\.nuget\\packages\\",
-        "outputPath": "C:\\Training2\\Bookish\\obj\\",
+        "outputPath": "C:\\Training2\\Bookish\\Bookish\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JamBai\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -35,6 +35,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.30, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

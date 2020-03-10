@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Training2\Bookish" t="IncludeRecursive">
+    <e p="C:\Training2\Bookish\Bookish" t="IncludeRecursive">
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
@@ -11,7 +11,11 @@
         <e p="HomeController.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
+        <e p="Book.cs" t="Include" />
+        <e p="Catalogue.cs" t="Include" />
+        <e p="DatabaseModels" t="Include" />
         <e p="ErrorViewModel.cs" t="Include" />
+        <e p="Models" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
@@ -26,6 +30,7 @@
       <e p="Properties" t="Include">
         <e p="launchSettings.json" t="Include" />
       </e>
+      <e p="README.md" t="Include" />
       <e p="Startup.cs" t="Include" />
       <e p="Views" t="Include">
         <e p="_ViewImports.cshtml" t="Include" />
@@ -105,6 +110,6 @@
     </e>
     <e p="C:\Users\JamBai\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
     <e p="C:\Users\JamBai\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\JamBai\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Bookish.-1717866433.00" t="ExcludeRecursive" />
+    <e p="C:\Users\JamBai\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Bookish.326692056.00" t="ExcludeRecursive" />
   </component>
 </project>
