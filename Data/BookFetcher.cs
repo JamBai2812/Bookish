@@ -12,18 +12,14 @@ namespace Bookish.Data
 {
     public class BookFetcher
     {
-        public List<Book> GetAllBooks()
+        private string connectionString = "Server=localhost;Database=BookishDB;Uid=root;Pwd=Bparty2568;";
+        
+        public List<Book> BookListQuery(string sql)
         {
-            var server = "localhost";
-            var database = "BookishDB";
-            var uid = "root";
-            var password = "Bparty2568";
-            string connectionString = "Server=" + server + ";" + "Database=" + 
-                                      database + ";" + "Uid=" + uid + ";" + "Pwd=" + password + ";";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 DefaultTypeMap.MatchNamesWithUnderscores = true;
-                List<Book> bookList = conn.Query<Book>("SELECT * FROM catalogue").ToList();
+                List<Book> bookList = conn.Query<Book>(sql).ToList();
                 return bookList;
             }
         }

@@ -34,12 +34,12 @@ namespace Bookish.Controllers
 
         public IActionResult Search()
         {
-            var searcher = new BookFetcher();
-            var data = searcher.GetAllBooks();
-            Book firstBook = data.First();
-            BookModel firstBookModel = new BookModel(firstBook);
-            
-            return View(firstBookModel);
+            var fetcher = new BookFetcher();
+            var sql = "SELECT * FROM catalogue";
+            var sql2 = "SELECT * FROM catalogue ORDER BY year_published";
+            var data = fetcher.BookListQuery(sql2);
+            var catalogue = new Catalogue(data);
+            return View(catalogue);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
