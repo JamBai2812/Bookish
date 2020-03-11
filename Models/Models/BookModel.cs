@@ -4,7 +4,7 @@
     {
         private Book _book;
 
-        BookModel(Book book)
+        public BookModel(Book book)
         {
             _book = book;
 

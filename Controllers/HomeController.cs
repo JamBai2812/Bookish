@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Bookish.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Bookish.Models;
+using Bookish.Models.Models;
 
 namespace Bookish.Controllers
 {
@@ -32,6 +34,11 @@ namespace Bookish.Controllers
 
         public IActionResult Search()
         {
+            var searcher = new BookFetcher();
+            var data = searcher.GetAllBooks();
+            Book firstBook = data.First();
+            BookModel firstBookModel = new BookModel(firstBook);
+            
             return View();
         }
 

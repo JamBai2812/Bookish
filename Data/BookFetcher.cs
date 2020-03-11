@@ -5,6 +5,8 @@ using Bookish.Models;
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
+using Microsoft.AspNetCore.HttpOverrides;
+using MySql.Data.MySqlClient;
 
 namespace Bookish.Data
 {
@@ -12,11 +14,17 @@ namespace Bookish.Data
     {
         public List<Book> GetAllBooks()
         {
-            var connectionString = "jdbc:mysql://localhost:3306/BookishDB";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            //127.0.0.1
+            var server = "localhost";
+            var database = "BookishDB";
+            var uid = "root";
+            var password = "Bparty2568";
+            string connectionString;
+            connectionString = "Server=" + server + ";" + "Database=" + 
+                               database + ";" + "Uid=" + uid + ";" + "Pwd=" + password + ";";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                List<Book> bookList = connection.Query<Book>("SELECT * FROM catalogue").ToList();
+                List<Book> bookList = conn.Query<Book>("SELECT * FROM catalogue").ToList();
                 return bookList;
             }
         }
