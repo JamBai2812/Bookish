@@ -7,8 +7,6 @@
         public BookModel(Book book)
         {
             _book = book;
-
-            // AuthorFirstName = book.AuthorFirstName;
         }
 
         public string AuthorFirstName => _book.AuthorFirstName;
