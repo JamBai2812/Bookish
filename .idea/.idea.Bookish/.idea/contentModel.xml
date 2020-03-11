@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Training2\Bookish\Bookish" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
@@ -10,6 +11,9 @@
       <e p="Controllers" t="Include">
         <e p="HomeController.cs" t="Include" />
         <e p="SearchController.cs" t="Include" />
+      </e>
+      <e p="Data" t="Include">
+        <e p="BookFetcher.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
         <e p="DatabaseModels" t="Include">

@@ -6,13 +6,11 @@
 
         BookModel(Book book)
         {
-            _book.Id = book.Id;
-            _book.AuthorFirstName = book.AuthorFirstName;
-            _book.AuthorLastName = book.AuthorLastName;
-            _book.Title = book.Title;
-            _book.YearPublished = book.YearPublished;
-            _book.NumberCheckedOut = book.NumberCheckedOut;
-            _book.NumberInStock = book.NumberInStock;
+            _book = book;
+
+            // AuthorFirstName = book.AuthorFirstName;
         }
+
+        public string AuthorFirstName => _book.AuthorFirstName;
     }
 }

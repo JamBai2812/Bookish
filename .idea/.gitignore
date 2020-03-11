@@ -1,2 +1,5 @@
 ﻿# Default ignored files
 /.idea.Bookish/.idea/workspace.xml
+# Datasource local storage ignored files
+/.idea.Bookish/.idea/dataSources/
+/.idea.Bookish/.idea/dataSources.local.xml
