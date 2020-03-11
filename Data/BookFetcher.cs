@@ -14,16 +14,15 @@ namespace Bookish.Data
     {
         public List<Book> GetAllBooks()
         {
-            //127.0.0.1
             var server = "localhost";
             var database = "BookishDB";
             var uid = "root";
             var password = "Bparty2568";
-            string connectionString;
-            connectionString = "Server=" + server + ";" + "Database=" + 
-                               database + ";" + "Uid=" + uid + ";" + "Pwd=" + password + ";";
+            string connectionString = "Server=" + server + ";" + "Database=" + 
+                                      database + ";" + "Uid=" + uid + ";" + "Pwd=" + password + ";";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
+                DefaultTypeMap.MatchNamesWithUnderscores = true;
                 List<Book> bookList = conn.Query<Book>("SELECT * FROM catalogue").ToList();
                 return bookList;
             }

@@ -39,7 +39,7 @@ namespace Bookish.Controllers
             Book firstBook = data.First();
             BookModel firstBookModel = new BookModel(firstBook);
             
-            return View();
+            return View(firstBookModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
