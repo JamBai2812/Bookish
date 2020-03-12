@@ -32,16 +32,6 @@ namespace Bookish.Controllers
             return View("Privacy");
         }
 
-        public IActionResult Search()
-        {
-            var fetcher = new BookFetcher();
-            var sql = "SELECT * FROM catalogue";
-            var sql2 = "SELECT * FROM catalogue ORDER BY year_published";
-            var data = fetcher.BookListQuery(sql2);
-            var catalogue = new Catalogue(data);
-            return View(catalogue);
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
