@@ -1,7 +1,30 @@
-﻿namespace Bookish.Data
+﻿using System.Collections.Generic;
+using System.Linq;
+using Bookish.Models;
+using Bookish.Models.Models;
+using Dapper;
+using MySql.Data.MySqlClient;
+
+namespace Bookish.Data
 {
-    public class BookAdder
+    public interface IAdder
     {
-        
+        void AddBook(Book book);
+    }
+
+    public class BookAdder : IAdder
+    {
+        private string connectionString = "Server=localhost;Database=BookishDB;Uid=root;Pwd=Bparty2568;";
+
+        public void AddBook(Book book)
+        {
+            string sql =
+                "INSERT INTO catalogue (author_first_name, author_last_name, title, year_published) VALUES ()";
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                DefaultTypeMap.MatchNamesWithUnderscores = true;
+                conn.Execute(sql);
+            }
+        }
     }
 }

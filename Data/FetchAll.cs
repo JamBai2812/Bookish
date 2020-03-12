@@ -11,6 +11,10 @@ using MySql.Data.MySqlClient;
 
 namespace Bookish.Data
 {
+public interface IFetcher
+    {
+        List<Book> BookListQuery(string sql);
+    }
     public class FetchAll : IFetcher
     {
         private string connectionString = "Server=localhost;Database=BookishDB;Uid=root;Pwd=Bparty2568;";

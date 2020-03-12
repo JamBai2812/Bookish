@@ -12,10 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Bookish.Controllers
 {
-    public interface IFetcher
-    {
-        List<Book> BookListQuery(string sql);
-    }
+    
     public class SearchController : Controller
     {
         private readonly ILogger<SearchController> _logger;
