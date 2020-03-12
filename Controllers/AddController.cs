@@ -14,20 +14,21 @@ namespace Bookish.Controllers
 {
     public class AddController : Controller
     {
+        // private readonly ILogger<SearchController> _logger;
         private readonly IAdder _myService;
         public AddController(IAdder myService)
         {
             _myService = myService;
             
         }
-        private readonly ILogger<SearchController> _logger;
+        
 
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult AddBook(Book newBook)
+        public IActionResult AddBook([FromForm]Book newBook)
         {
             _myService.AddBook(newBook);
             return View();

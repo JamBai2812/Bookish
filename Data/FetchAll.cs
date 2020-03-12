@@ -11,10 +11,16 @@ using MySql.Data.MySqlClient;
 
 namespace Bookish.Data
 {
-public interface IFetcher
+    public enum Sort {
+        Name, Published
+    }
+
+    public interface IFetcher
     {
         List<Book> BookListQuery(string sql);
+        List<Book> GetAllBooks(Sort sort);
     }
+    
     public class FetchAll : IFetcher
     {
         private string connectionString = "Server=localhost;Database=BookishDB;Uid=root;Pwd=Bparty2568;";

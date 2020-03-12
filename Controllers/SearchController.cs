@@ -15,13 +15,12 @@ namespace Bookish.Controllers
     
     public class SearchController : Controller
     {
-        private readonly ILogger<SearchController> _logger;
+        // private readonly ILogger<SearchController> _logger;
         private readonly IFetcher _myService;
 
         public SearchController(IFetcher myService)
         {
             _myService = myService;
-            
         }
 
         // public SearchController(ILogger<SearchController> logger)
