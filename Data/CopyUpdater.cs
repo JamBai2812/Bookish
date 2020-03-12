@@ -19,7 +19,6 @@ namespace Bookish.Data
             
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                DefaultTypeMap.MatchNamesWithUnderscores = true;
                 conn.Execute(sql, new {bookId = id});
             }
         }
@@ -31,7 +30,6 @@ namespace Bookish.Data
             
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
-                DefaultTypeMap.MatchNamesWithUnderscores = true;
                 conn.Execute(sql, new {bookId = id});
             }
         }
