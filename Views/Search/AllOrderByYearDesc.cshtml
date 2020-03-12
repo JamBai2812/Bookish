@@ -13,15 +13,19 @@
         <th>Title</th>
         <th>Author</th>
         <th>Year Published</th>
+        <th>Checked Out</th>
+        <th>On Shelf</th>
     </tr>
     @foreach (Book book in Model.BookList)
     {
         <tr>
             <td>@book.Title</td>
-            <td>
-                @book.AuthorFirstName @book.AuthorLastName
-            </td>
+            <td>@book.AuthorLastName, @book.AuthorFirstName </td>
             <td>@book.YearPublished</td>
+            <td>@book.NumberCheckedOut</td>
+            <td>@book.NumberInStock</td>
+            <td><button type="button" onclick="location.href='@Url.Action("AddCopy", "Search", new {id = book.BookId})'"/>Add Copy</td>
+            <td><button type="button" onclick="location.href='@Url.Action("DeleteCopy", "Search", new {id = book.BookId})'"/>Delete Copy</td>
         </tr>
     }
 </table>
