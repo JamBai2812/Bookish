@@ -7,8 +7,13 @@ using MySql.Data.MySqlClient;
 
 namespace Bookish.Data
 {
+    public interface ICopyUpdater
+    {
+        void AddCopy(string id);
+        void DeleteCopy(string id);
+    }
 
-    public class CopyUpdater
+    public class CopyUpdater : ICopyUpdater
     {
         private string connectionString = "Server=localhost;Database=BookishDB;Uid=root;Pwd=Bparty2568;";
 

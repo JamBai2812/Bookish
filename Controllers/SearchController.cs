@@ -17,10 +17,12 @@ namespace Bookish.Controllers
     {
         // private readonly ILogger<SearchController> _logger;
         private readonly IFetcher _myService;
+        private readonly ICopyUpdater _copyUpdaterService;
 
-        public SearchController(IFetcher myService)
+        public SearchController(IFetcher myService, ICopyUpdater copyUpdaterService)
         {
             _myService = myService;
+            _copyUpdaterService = copyUpdaterService;
         }
 
         // public SearchController(ILogger<SearchController> logger)
@@ -31,11 +33,11 @@ namespace Bookish.Controllers
         {
             return View("Index");
         }
-        public IActionResult AllOrderByAuthorLastName(string sql)
+        public IActionResult AllOrderByAuthorLastName()
         {
             var data = _myService.BookListQuery("SELECT * FROM catalogue ORDER BY author_last_name");
             var model = new Catalogue(data);
-            return View(model);
+            return View("AllOrderByAuthorLastName", model);
         }
         public IActionResult AllOrderByYearDesc()
         {
@@ -46,20 +48,14 @@ namespace Bookish.Controllers
 
         public IActionResult AddCopy(string id)
         {
-            var copyUpdater = new CopyUpdater();
-            copyUpdater.AddCopy(id);
-            var data = _myService.BookListQuery("SELECT * FROM catalogue ORDER BY author_last_name");
-            var model = new Catalogue(data);
-            return View("AllOrderByAuthorLastName", model);
+            _copyUpdaterService.AddCopy(id);
+            return AllOrderByAuthorLastName();
         }
         
         public IActionResult DeleteCopy(string id)
         {
-            var copyUpdater = new CopyUpdater();
-            copyUpdater.DeleteCopy(id);
-            var data = _myService.BookListQuery("SELECT * FROM catalogue ORDER BY author_last_name");
-            var model = new Catalogue(data);
-            return View("AllOrderByAuthorLastName", model);
+            _copyUpdaterService.DeleteCopy(id);
+            return AllOrderByAuthorLastName();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
