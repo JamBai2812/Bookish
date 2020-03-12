@@ -11,14 +11,14 @@ using MySql.Data.MySqlClient;
 
 namespace Bookish.Data
 {
-    public enum Sort {
-        Name, Published
-    }
+    // public enum Sort {
+    //     Name, Published
+    // }
 
     public interface IFetcher
     {
         List<Book> BookListQuery(string sql);
-        List<Book> GetAllBooks(Sort sort);
+        // List<Book> GetAllBooks(Sort sort);
     }
     
     public class FetchAll : IFetcher
@@ -34,5 +34,15 @@ namespace Bookish.Data
                 return bookList;
             }
         }
+
+        // public List<Book> GetAllBooks(Sort sort)
+        // {
+        //     using (MySqlConnection conn = new MySqlConnection(connectionString))
+        //     {
+        //         DefaultTypeMap.MatchNamesWithUnderscores = true;
+        //         List<Book> bookList = conn.Query<Book>(sql).ToList();
+        //         return bookList;
+        //     }
+        // }
     }
 }

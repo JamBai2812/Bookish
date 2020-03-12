@@ -44,6 +44,24 @@ namespace Bookish.Controllers
             return View(model);
         }
 
+        public IActionResult AddCopy(string id)
+        {
+            var copyUpdater = new CopyUpdater();
+            copyUpdater.AddCopy(id);
+            var data = _myService.BookListQuery("SELECT * FROM catalogue ORDER BY author_last_name");
+            var model = new Catalogue(data);
+            return View("AllOrderByAuthorLastName", model);
+        }
+        
+        public IActionResult DeleteCopy(string id)
+        {
+            var copyUpdater = new CopyUpdater();
+            copyUpdater.DeleteCopy(id);
+            var data = _myService.BookListQuery("SELECT * FROM catalogue ORDER BY author_last_name");
+            var model = new Catalogue(data);
+            return View("AllOrderByAuthorLastName", model);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

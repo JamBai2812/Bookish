@@ -19,11 +19,11 @@ namespace Bookish.Data
         public void AddBook(Book book)
         {
             string sql =
-                "INSERT INTO catalogue (author_first_name, author_last_name, title, year_published) VALUES ()";
+                "INSERT INTO catalogue (author_first_name, author_last_name, title, year_published) VALUES (@firstName, @lastName, @title, @yearPublished)";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 DefaultTypeMap.MatchNamesWithUnderscores = true;
-                conn.Execute(sql);
+                conn.Execute(sql, new {firstName = book.AuthorFirstName, lastName = book.AuthorLastName, title = book.Title, yearPublished = book.YearPublished});
             }
         }
     }
