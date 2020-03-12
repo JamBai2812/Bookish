@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Add Book</h2>
+
+<form asp-controller="Add" asp-action="AddBook" method="post">
+
+    <div class="userInputSection">
+        <label for="Title">Book Title</label>
+        <br>
+        <input name="Title" type="text" id="Title">
+        <br>
+    </div>
+    <div class="userInputSection">
+        <label for="AuthorFirstName">Author first Name</label>
+        <br>
+        <input name="AuthorFirstName" type="text" id="AuthorFirstName">
+        <br>
+    </div>
+    <div class="userInputSection">
+        <label for="AuthorLastName">Author last name</label>
+        <br>
+        <input name="AuthorLastName" type="text" id="AuthorLastName">
+        <br>
+    </div>
+    <button class="submit" type="submit">Submit new book</button>
+</form>
