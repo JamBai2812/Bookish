@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Bookish.Models;
 using Bookish.Models.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Bookish.Controllers
 {
@@ -18,23 +19,33 @@ namespace Bookish.Controllers
     public class SearchController : Controller
     {
         private readonly ILogger<SearchController> _logger;
+        private readonly IFetcher _myService;
 
-        public SearchController(ILogger<SearchController> logger)
+        public SearchController(IFetcher myService, FetchAll fetchAll)
         {
-            _logger = logger;
+            _myService = myService;
+            
         }
+
+        // public SearchController(ILogger<SearchController> logger)
+        //             {
+        //                 _logger = logger;
+        //             }
         public IActionResult Index()
         {
             return View("Index");
         }
-        public IActionResult All()
+        public IActionResult AllOrderByAuthorLastName(string sql)
         {
-            var fetcher = new BookFetcher();
-            var sql = "SELECT * FROM catalogue";
-            var sql2 = "SELECT * FROM catalogue ORDER BY year_published";
-            var data = fetcher.BookListQuery(sql2);
-            var catalogue = new Catalogue(data);
-            return View(catalogue);
+            var data = _myService.BookListQuery("SELECT * FROM catalogue ORDER BY author_last_name");
+            var model = new Catalogue(data);
+            return View(model);
+        }
+        public IActionResult AllOrderByYearDesc()
+        {
+            var data = _myService.BookListQuery("SELECT * FROM catalogue ORDER BY year_published DESC");
+            var model = new Catalogue(data);
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

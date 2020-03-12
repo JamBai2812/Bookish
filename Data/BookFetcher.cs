@@ -11,7 +11,7 @@ using MySql.Data.MySqlClient;
 
 namespace Bookish.Data
 {
-    public class BookFetcher : IFetcher
+    public class FetchAll : IFetcher
     {
         private string connectionString = "Server=localhost;Database=BookishDB;Uid=root;Pwd=Bparty2568;";
         
