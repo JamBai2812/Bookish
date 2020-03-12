@@ -21,7 +21,7 @@ namespace Bookish.Controllers
         private readonly ILogger<SearchController> _logger;
         private readonly IFetcher _myService;
 
-        public SearchController(IFetcher myService, FetchAll fetchAll)
+        public SearchController(IFetcher myService)
         {
             _myService = myService;
             
