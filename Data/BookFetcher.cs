@@ -4,13 +4,14 @@ using System.Data;
 using Bookish.Models;
 using System.Data.SqlClient;
 using System.Linq;
+using Bookish.Controllers;
 using Dapper;
 using Microsoft.AspNetCore.HttpOverrides;
 using MySql.Data.MySqlClient;
 
 namespace Bookish.Data
 {
-    public class BookFetcher
+    public class BookFetcher : IFetcher
     {
         private string connectionString = "Server=localhost;Database=BookishDB;Uid=root;Pwd=Bparty2568;";
         
