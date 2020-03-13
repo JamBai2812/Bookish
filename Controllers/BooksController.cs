@@ -15,22 +15,22 @@ namespace Bookish.Controllers
     
     public class BooksController : Controller
     {
-        // private readonly ILogger<BooksController> _logger;
+        //Services
+        private readonly ILogger<BooksController> _logger;
         private readonly IFetcher _myService;
         private readonly ICopyUpdater _copyUpdaterService;
         private readonly IAdder _adderService;
 
-        public BooksController(IFetcher myService, ICopyUpdater copyUpdaterService, IAdder adderService)
+        //Constructor
+        public BooksController(IFetcher myService, ICopyUpdater copyUpdaterService, IAdder adderService, ILogger<BooksController> logger)
         {
             _myService = myService;
             _copyUpdaterService = copyUpdaterService;
             _adderService = adderService;
+            _logger = logger;
         }
-
-        // public BooksController(ILogger<BooksController> logger)
-        //             {
-        //                 _logger = logger;
-        //             }
+        
+        //Actions
         public IActionResult Search()
         {
             return View("Index");
