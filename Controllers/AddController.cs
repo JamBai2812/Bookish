@@ -14,7 +14,7 @@ namespace Bookish.Controllers
 {
     public class AddController : Controller
     {
-        // private readonly ILogger<SearchController> _logger;
+        // private readonly ILogger<BooksController> _logger;
         private readonly IAdder _myService;
         public AddController(IAdder myService)
         {

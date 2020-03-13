@@ -13,19 +13,19 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Bookish.Controllers
 {
     
-    public class SearchController : Controller
+    public class BooksController : Controller
     {
-        // private readonly ILogger<SearchController> _logger;
+        // private readonly ILogger<BooksController> _logger;
         private readonly IFetcher _myService;
         private readonly ICopyUpdater _copyUpdaterService;
 
-        public SearchController(IFetcher myService, ICopyUpdater copyUpdaterService)
+        public BooksController(IFetcher myService, ICopyUpdater copyUpdaterService)
         {
             _myService = myService;
             _copyUpdaterService = copyUpdaterService;
         }
 
-        // public SearchController(ILogger<SearchController> logger)
+        // public BooksController(ILogger<BooksController> logger)
         //             {
         //                 _logger = logger;
         //             }

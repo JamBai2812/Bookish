@@ -26,8 +26,8 @@
             <td>@book.YearPublished</td>
             <td>@book.NumberCheckedOut</td>
             <td>@book.NumberInStock</td>
-            <td><button type="button" onclick="location.href='@Url.Action("AddCopy", "Search", new {id = book.BookId})'" />Add Copy</td>
-            <td><button type="button" onclick="location.href='@Url.Action("DeleteCopy", "Search", new {id = book.BookId})'" />Delete Copy</td>
+            <td><button type="button" onclick="location.href='@Url.Action("AddCopy", "Books", new {id = book.BookId})'" />Add Copy</td>
+            <td><button type="button" onclick="location.href='@Url.Action("DeleteCopy", "Books", new {id = book.BookId})'" />Delete Copy</td>
         </tr>
     }
 </table>
