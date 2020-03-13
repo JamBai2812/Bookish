@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h1>Check-out Book Form</h1>
+
+<form asp-controller="Member" asp-action="CheckOutBook" method="post">
+    <div class="userInputSection">
+        <label for="BookId">Book Id</label>
+        <br>
+        <input name="BookId" type="text" id="BookId">
+        <br>
+    </div>
+    <div class="userInputSection">
+        <label for="MemberId">Member Id</label>
+        <br>
+        <input name="MemberId" type="text" id="MemberId">
+        <br>
+    </div>
+    <button class="submit" type="submit">Check-out Book</button>
+</form>

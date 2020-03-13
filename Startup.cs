@@ -30,6 +30,7 @@ namespace Bookish
             services.AddTransient<IAdder, BookAdder>();
             services.AddTransient<ICopyUpdater, CopyUpdater>();
             services.AddTransient<IMemberFetcher, MemberFetch>();
+            services.AddTransient<ICheckOut, CheckOut>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

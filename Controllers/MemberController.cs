@@ -17,13 +17,15 @@ namespace Bookish.Controllers
         //Services
         private readonly ILogger<BooksController> _logger;
         private readonly IMemberFetcher _fetchService;
-        
+        private readonly ICheckOut _checkOutService;
+
 
         //Constructor
-        public MemberController(ILogger<BooksController> logger, IMemberFetcher fetchService)
+        public MemberController(ILogger<BooksController> logger, IMemberFetcher fetchService, ICheckOut checkOutService)
         {
             _logger = logger;
             _fetchService = fetchService;
+            _checkOutService = checkOutService;
         }
 
         //Actions
@@ -37,6 +39,17 @@ namespace Bookish.Controllers
             var data = _fetchService.AllMembers("SELECT * FROM members");
             var model = new Members(data);
             return View(model);
+        }
+        public IActionResult CheckOutForm()
+        {
+            return View();
+        }
+
+        public IActionResult CheckOutBook([FromForm] MemberBook newMemberBook)
+
+        {
+            _checkOutService.AddMemberBook(newMemberBook);
+            return View("Index");
         }
 
 
