@@ -1,0 +1,24 @@
+﻿@model Bookish.Models.Models.Members
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h1>All Members</h1>
+
+<table style="width:100%">
+    <tr>
+        <th>Member ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+    @foreach (Member member in Model.MemberList)
+    {
+        <tr>
+            <td>@member.MemberId</td>
+            <td>@member.FirstName</td>
+            <td>@member.LastName</td>
+        </tr>
+    }
+</table>

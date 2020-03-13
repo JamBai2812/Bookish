@@ -16,19 +16,27 @@ namespace Bookish.Controllers
     {
         //Services
         private readonly ILogger<BooksController> _logger;
+        private readonly IMemberFetcher _fetchService;
         
 
         //Constructor
-        public MemberController(ILogger<BooksController> logger)
+        public MemberController(ILogger<BooksController> logger, IMemberFetcher fetchService)
         {
-           
             _logger = logger;
+            _fetchService = fetchService;
         }
 
         //Actions
         public IActionResult Index()
         {
             return View("Index");
+        }
+
+        public IActionResult AllOrderById()
+        {
+            var data = _fetchService.AllMembers("SELECT * FROM members");
+            var model = new Members(data);
+            return View(model);
         }
 
 
