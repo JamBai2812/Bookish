@@ -18,20 +18,33 @@ namespace Bookish.Controllers
         // private readonly ILogger<BooksController> _logger;
         private readonly IFetcher _myService;
         private readonly ICopyUpdater _copyUpdaterService;
+        private readonly IAdder _adderService;
 
-        public BooksController(IFetcher myService, ICopyUpdater copyUpdaterService)
+        public BooksController(IFetcher myService, ICopyUpdater copyUpdaterService, IAdder adderService)
         {
             _myService = myService;
             _copyUpdaterService = copyUpdaterService;
+            _adderService = adderService;
         }
 
         // public BooksController(ILogger<BooksController> logger)
         //             {
         //                 _logger = logger;
         //             }
-        public IActionResult Index()
+        public IActionResult Search()
         {
             return View("Index");
+        }
+        
+        public IActionResult AddBookForm()
+        {
+            return View();
+        }
+
+        public IActionResult AddBook([FromForm]Book newBook)
+        {
+            _adderService.AddBook(newBook);
+            return View();
         }
         public IActionResult AllOrderByAuthorLastName()
         {
